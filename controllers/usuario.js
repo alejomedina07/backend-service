@@ -10,7 +10,7 @@ var mdAutenticacion = require('../middlewares/autenticacion');
 
 
 app.get('/', ( req, res ) => {
-  user.find({}, 'name email role')
+  user.find({}, 'name email role img')
   .then(function(usuarios) {
     res.status(200).json({ error:false, usuarios});
   })
