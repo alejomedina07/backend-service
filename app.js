@@ -18,9 +18,12 @@ app.use(bodyParser.json())
 
 mongoose.connect('mongodb://localhost/hospitalDB', {useNewUrlParser: true}, { useCreateIndex: true });
 
-app.use('/', require('./controllers/index'));
+
 app.use('/usuario', require('./controllers/usuario'));
+app.use('/hospital', require('./controllers/hospital'));
+app.use('/medico', require('./controllers/medico'));
 app.use('/login', require('./controllers/login'));
+app.use('/', require('./controllers/index'));
 
 app.listen(3000, () => {
   console.log('corriendo por el puerto 3000: \x1b[42m%s\x1b[0m', ' online');
